@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hour</title>
+</head>
+<body>
+<h3>Take a guess!</h3>
+<button onclick="playGame('heads')">heads</button>
+<button onclick="playGame('tails')">Tails</button>
+<p class="js-result"></p>
+<script>
+function playGame(playerMove){
+    const randomNumber = Math.random()
+    let result = ''
+    randomNumber > 0.5 ? result = 'heads' : result = 'tails';
+    if (playerMove === 'heads'){
+         result === playerMove ? document.querySelector('.js-result')
+             .innerHTML = `You chose ${playerMove}. You win!`
+             : document.querySelector('.js-result')
+                 .innerHTML = `You chose ${playerMove}. You lose`;
+    } else if (playerMove === 'tails'){
+       result === playerMove ? document.querySelector('.js-result')
+           .innerHTML = `You chose ${playerMove}. You win!`
+           : document.querySelector('.js-result')
+               .innerHTML = `You chose ${playerMove}. You lose`;
+    }
+
+}
+
+</script>
+</body>
+</html>
