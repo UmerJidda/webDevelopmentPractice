@@ -1,45 +1,4 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-<style>
-    body{
-        background-color: rgb(70, 60, 75);
-        color: white;
-        font-family: Arial;
-    }
-    h4{
-        font-size: 30px;
-        font-weight: bold;
-
-    }
-</style>
-</head>
-<body>
-<h4>Rock Paper Scissors</h4>
-<button onclick="playGame('rock')">Rock</button>
-<button onclick="playGame('paper')">Paper</button>
-<button onclick="playGame('scissors')">Scissors</button>
-<p class="js-result"></p>
-<p class="js-move"></p>
-<p class="js-score"></p>
-<button onclick="
-score.wins = 0;
-score.loses = 0;
-score.tie = 0;
-localStorage.removeItem('score');
-updateScoreElement();
-">Reset Score</button>
-
-
-
-
-<script>
-    let score = JSON.parse(localStorage.getItem('score')) || {
+let score = JSON.parse(localStorage.getItem('score')) || {
         wins: 0,
         loses: 0,
         tie: 0
@@ -98,7 +57,7 @@ updateScoreElement();
             .innerHTML = `${result}`;
 
         document.querySelector('.js-move')
-            .innerHTML = `Computer chose: ${computerMove}. You chose: ${playerMove}.`;
+            .innerHTML = `You <img src="images/${playerMove}-emoji.png" class="move-icon"> <img src="images/${computerMove}-emoji.png" class="move-icon"> Computer`;
 
     }
 
@@ -120,7 +79,6 @@ updateScoreElement();
 
         return computerMove;
     }
-// rock paper scissors game with JSON parsing, stringify, local storage, DOM,
-</script>
-</body>
-</html>
+
+
+// rock paper scissors game with JSON parsing, stringify, local storage, DOM and much more !!
